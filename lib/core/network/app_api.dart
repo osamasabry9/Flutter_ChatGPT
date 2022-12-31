@@ -22,6 +22,8 @@ abstract class AppServiceClient {
   @POST(Constants.endPointText)
   Future<TextCompletionResponse> getTextCompletion(
     @Field("model") String model,
+    @Field("max_tokens") int maxTokens,
+
     @Field("prompt") String promptText,
   );
 }

@@ -54,6 +54,7 @@ class _AppServiceClient implements AppServiceClient {
   @override
   Future<TextCompletionResponse> getTextCompletion(
     model,
+    maxTokens,
     promptText,
   ) async {
     const _extra = <String, dynamic>{};
@@ -61,6 +62,7 @@ class _AppServiceClient implements AppServiceClient {
     final _headers = <String, dynamic>{};
     final _data = {
       'model': model,
+      'max_tokens': maxTokens,
       'prompt': promptText,
     };
     final _result = await _dio.fetch<Map<String, dynamic>>(

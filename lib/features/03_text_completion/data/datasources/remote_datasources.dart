@@ -14,6 +14,7 @@ class TextCompletionRemoteDataSourceImpl implements TextCompletionRemoteDataSour
   Future<TextCompletionResponse> getTextCompletion(String query) async {
     return await _appServiceClient.getTextCompletion(
       "text-davinci-003",
+       1000,
       query,
     );
   }
